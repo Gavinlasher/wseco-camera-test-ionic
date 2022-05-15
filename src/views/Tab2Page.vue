@@ -6,6 +6,13 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
+     <ion-grid>
+    <ion-row>
+      <ion-col size="6" :key="photo" v-for="photo in photos">
+        <ion-img :src="photo.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+     </ion-grid>
      <ion-fab vertical="bottom" horizontal="center" slot="fixed" >   
 <ion-fab-button @click="takePhoto()">
 <ion-icon :icon="camera"> 
@@ -37,7 +44,8 @@ import {
   IonImg,
 } from '@ionic/vue';
 import { setupConfig } from "@ionic/core";
-import  {usePhotoGallery} from "@/composables/usePhotoGallery"
+import  {usePhotoGallery, UserPhoto} from "@/composables/usePhotoGallery"
+
 
 
 export default {
@@ -58,14 +66,15 @@ components: {
   },
 
 setup(){
-  const {takePhoto} = usePhotoGallery();
+  const {takePhoto , photos} = usePhotoGallery();
   return{
-camera, trash,close, takePhoto
+camera, trash,close, takePhoto , photos
   }
 }
 
 
 }
+
 
 
 </script>
