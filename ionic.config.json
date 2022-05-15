@@ -1,0 +1,7 @@
+{
+  "name": "Wseco camera test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
