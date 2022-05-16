@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Wseco camera test",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
